@@ -2957,6 +2957,9 @@ Compression
 Compatible with older versions of browser
 HTTPS on dev
 Manages port numbers
+Consistent Hashing Algorithm to do caching
+Zero-Config Bundler
+Uses Transitive Dependencies
 
 
 */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
