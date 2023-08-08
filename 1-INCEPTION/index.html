@@ -7,7 +7,10 @@
   </head>
   <body>
     <!-- Make this render 
-    div.container>h1"heading1" & h2>"heading2"
+    <div id="container">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+    </div>
     -->
     <!-- React is a library developed by facebook-->
     <div class="header"><h1>Aman Fangeria</h1></div>
@@ -24,6 +27,9 @@
         const root=document.getElementById("root");
         root.appendChild(heading);
     </script> -->
+
+
+
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -39,6 +45,8 @@
                 color: "red"
             },
         },"Hello React!");
+
+
 
         const heading1=React.createElement("h1",{},"Heading 1");
         const heading2=React.createElement("h2",{},"Heading 2");
