@@ -1,6 +1,7 @@
 /* 
 WHAT PARCEL IS DOING?
-Hot module reload - HMR
+Created a server
+Hot module replacement - HMR
 File Watcher algorithm - C++
 BUNDLING
 {npx build parcel index.html for prod build, remove entrypoint from package.json as we have to pass it in the command line itself in parcel}
@@ -17,7 +18,7 @@ Manages port numbers
 Consistent Hashing Algorithm to do caching
 Zero-Config Bundler
 Uses Transitive Dependencies
-
+Tree Shaking - Removing unwanted code
 
 */
 
