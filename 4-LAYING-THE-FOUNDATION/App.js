@@ -81,7 +81,7 @@ const HeaderComponent=()=>{
 const ParaComponent=()=>(
 <p>I am learning react.</p>
 ) //Components don't need to have order or hoisting doesn't work normally in components
-//Now, how to use any exisiting component inside a component or it is called component composition
+//Now, how to use an exisiting component inside a component or it is called component composition
 //just use it as a tag for example in line number 61 or like {ParaComponent()};
 
 //If we want to write any normal javascript thing inside out functional component, just embed it under curly braces and use it as in line 62
