@@ -25,85 +25,7 @@ const Header = () => (
     </div>
   </div>
 );
-//Config Driven UI:
-// when you build a real world application, we control out frontend using some config, backend and ui is driving that config, so ui will be based on what config has.
 
-// for eg
-/* 
-const config = [
-  {
-    type: "carousel",
-    card: [
-      {
-        offerName: "50% OFF",
-      },
-      {
-        offerName: "NO Delivery Charge",
-      },
-    ],
-  },
-  {
-    type: "restaurants",
-    card: [
-      {
-        image:
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4",
-        name: "Burger King",
-        cuisines: ["Burgers", "American"],
-        rating: "4.2",
-      },
-      {
-      image:
-        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4",
-      name: "KFC",
-      cuisines: ["Pizza", "Italian"],
-      rating: "4.0",
-      },
-    ],
-  },
-]; 
-*/
-
-// In real world, data doesn't come like this instead there is an array full of objects, from which we fetch data possibly from an api
-// const burgerKing={
-//   image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4",
-//   name: "Burger King",
-//   cuisines: ["Burgers","American"],
-//   rating: "4.2"
-// }
-
-/* const RestaurantCard=()=>{
-  return(
-    <div className="card">
-      <img src={burgerKing.image} alt="card1" srcset="" />
-      <h2>{burgerKing.name}</h2>
-      <h3>{burgerKing.cuisines.join(", ")}</h3>
-      <h4>{burgerKing.rating} stars</h4>
-    </div>
-  )
-} */
-
-// Something like this
-
-
-
-/* const restaurantList = [
-  {
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4",
-    name: "Burger King",
-    cuisines: ["Burgers", "American"],
-    rating: "4.2",
-  },
-  {
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4",
-    name: "Burger King",
-    cuisines: ["Burgers", "American"],
-    rating: "4.2",
-  },
-];
- */
 
 const restaurantList=[
   {
@@ -946,17 +868,8 @@ const restaurantList=[
   },
 ]
 
-
-//Optional Chaining -> ?.
-// props means passing some data into the components
-
-//now instead of writing props, we can do object destructuring and directly use restaurant (write this instead of props => {restaurant})instead of writing props.restaurant 
-
-const RestaurantCard = ({restaurant}) => {
-  // console.log(props); //props
-  // Further, we can destructure the restaurant object, so instead of writing => restaurant.info?.name, we can just write name, for that we will do the following:
-
-  const {cloudinaryImageId,name,cuisines,avgRating}=restaurant.info;
+//Further destructuring the restaurant directly and passing name=Restaurant.info.name
+const RestaurantCard = ({name,cloudinaryImageId,cuisines,avgRating}) => {
   return (
     <div className="card">
       <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="card1" />
@@ -973,50 +886,24 @@ const RestaurantCard = ({restaurant}) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      {/* <RestaurantCard restaurant={restaurantList[0]}/> */}
 
-      {/* {RestaurantCard(restaurantList[0])}; */}
-      {/* It is similar to the above, we are just passing argument to the functional component  */}
-      <RestaurantCard restaurant={restaurantList[0]}/>
-      <RestaurantCard restaurant={restaurantList[1]}/>
-      <RestaurantCard restaurant={restaurantList[2]}/>
-      <RestaurantCard restaurant={restaurantList[4]}/>
-      <RestaurantCard restaurant={restaurantList[5]}/>
-      <RestaurantCard restaurant={restaurantList[6]}/>
-      <RestaurantCard restaurant={restaurantList[0]}/>
-      <RestaurantCard restaurant={restaurantList[1]}/>
-      <RestaurantCard restaurant={restaurantList[2]}/>
-      <RestaurantCard restaurant={restaurantList[4]}/>
-      <RestaurantCard restaurant={restaurantList[5]}/>
-      <RestaurantCard restaurant={restaurantList[6]}/>
+      {/* <RestaurantCard name={restaurantList[0].info.name} cloudinaryImageId={restaurantList[0].info.cloudinaryImageId} avgRating={restaurantList[0].info.avgRating} cuisines={restaurantList[0].info.cuisines}/> */}
+      {/* Alternatively, we can use spread operator instead of passing each of the properties individually instead of destructuring each property one-by-one */}
+      <RestaurantCard {...restaurantList[0].info}/>
+      <RestaurantCard {...restaurantList[1].info}/>
+      <RestaurantCard {...restaurantList[2].info}/>
+
+      {/* As we can see, we have to print all the restaurants, we can use for loop or for each loop but, it's a bad practice, we can instead use map method for this which is a good practice in functional programming */}
     </div>
   );
 };
 
 const Footer = () => {
-  return <h4>Footer</h4>;
+  return <h4>Footer</h4>; 
 };
 
 const AppLayout = () => (
   <>
-    {/* Header
-        -logo(title)
-        -Nav items (right side navbar)
-        -Cart
-
-      Body
-        -Search Bar
-        -Restaurant List
-          -RestaurantCard(many cards)
-            -Image
-            -Name
-            -Rating
-            -Cuisines
-
-      Footer
-        -links
-        -copyright */}
-
     <Header />
     <Body />
     <Footer />
