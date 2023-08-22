@@ -886,14 +886,12 @@ const RestaurantCard = ({name,cloudinaryImageId,cuisines,avgRating}) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-
-      {/* <RestaurantCard name={restaurantList[0].info.name} cloudinaryImageId={restaurantList[0].info.cloudinaryImageId} avgRating={restaurantList[0].info.avgRating} cuisines={restaurantList[0].info.cuisines}/> */}
-      {/* Alternatively, we can use spread operator instead of passing each of the properties individually instead of destructuring each property one-by-one */}
-      <RestaurantCard {...restaurantList[0].info}/>
-      <RestaurantCard {...restaurantList[1].info}/>
-      <RestaurantCard {...restaurantList[2].info}/>
-
       {/* As we can see, we have to print all the restaurants, we can use for loop or for each loop but, it's a bad practice, we can instead use map method for this which is a good practice in functional programming */}
+      {    
+        restaurantList.map(restaurant=>{
+          return <RestaurantCard {...restaurant.info}/>
+        })
+      }
     </div>
   );
 };
