@@ -889,12 +889,18 @@ const Body = () => {
       {/* As we can see, we have to print all the restaurants, we can use for loop or for each loop but, it's a bad practice, we can instead use map method for this which is a good practice in functional programming */}
       {    
         restaurantList.map(restaurant=>{
-          return <RestaurantCard {...restaurant.info}/>
+          return <RestaurantCard {...restaurant.info} key={restaurant.info.id}/>
         })
       }
+
     </div>
   );
 };
+
+// Virtual DOM: A representation of a DOM with us is called a virtual DOM, we need this for reconciliation in react. That's why we have added key as a prop while rendering each restaurant card.
+
+// Reconciliation: The algorithm react uses to diff one tree with another to determine which parts need to be changed. 
+
 
 const Footer = () => {
   return <h4>Footer</h4>; 
