@@ -8,7 +8,7 @@ const Title = () => (
   //   Food Villa
   // </h1> */}
 );
-//Comments in JSX are same as JS- Single line comment-> // and Multi line comment-> /* */ but inside the curly braces
+//Comments in JSX are same as JS- Single line comment-> // +and Multi line comment-> /* */ but inside the curly braces
 // JSX is not mandatory
 // JSX can only have one parent, that's why we can also use <Fragment> </Fragment> or <> </> to wrap multiple tags inside a common parent which comes from React.Fragment component defined in React. It doesnot affect the existing dom or add anything by its own to the dom
 // How to do inline css using style in react jsx using {{}}
