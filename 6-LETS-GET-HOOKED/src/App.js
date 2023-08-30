@@ -1,15 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"
-import { Title } from "./components/Header";
-
-// If we want to import everything, we can do this
-// import * as obj from "./components/Header"
-// We can use it like this
-{/* <obj.Title/> */}
-
-// We can also name our component file from .js or .jsx, it doesn't really matter
-
 
 
 
