@@ -1,25 +1,16 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
-logo_src = require("./assets/logo.png");
-const Title = () => (
-  <a href="/">
-    <img className="logo" src={logo_src} alt="logo" />
-  </a>
-);
+import Header from "./components/Header"
+import { Title } from "./components/Header";
+
+// If we want to import everything, we can do this
+// import * as obj from "./components/Header"
+// We can use it like this
+// obj.Title
 
 
-const Header = () => (
-  <div className="header">
-    <Title></Title>
-    <div className="nav-items">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
+
+
 
 
 const restaurantList=[
