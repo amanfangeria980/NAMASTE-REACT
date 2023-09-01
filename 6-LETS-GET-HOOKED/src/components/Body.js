@@ -3,7 +3,7 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
 function filterData(searchInput,restaurants){
-  const data=restaurants.filter((restaurant)=>restaurant.info.name.includes(searchInput));
+  const data=restaurantList.filter((restaurant)=>restaurant.info.name.includes(searchInput));
   return data;
 }
 
