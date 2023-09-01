@@ -2,30 +2,35 @@ import { useState } from "react";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
+function filterData(searchInput,restaurants){
+  const data=restaurants.filter((restaurant)=>restaurant.info.name.includes(searchInput));
+  return data;
+}
+
+
 
 const Body = () => {
-    // useState hook returns an array, first is variable and second is function to update the variable
-    // Here it is using two way binding
-    const [searchInput,setSearchInput]=useState("KFC");
-    const [searchClicked,setSearchClicked]=useState("false");
+    const [searchInput,setSearchInput]=useState("");
+    const [restaurants, setRestaurants]=useState(restaurantList);
   return (
     <>
 
 
     <div className="search-container">
         <input type="text" className="search-input" placeholder="Search" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
-        <h1>{searchClicked}</h1>
+
         <button className="search-btn" onClick={()=>{
-          if(searchClicked==="true")setSearchClicked("false");
-          else setSearchClicked("true");
+          // need to filter the data
+          // update the state of the - restaurants variable
+          const data=filterData(searchInput,restaurants);
+          setRestaurants(data);
         }}>Search</button>
-        {/* Here on click, our heading comonent is getting re rendered */}
-        {/* we don't need to add the event as we are changing the value ourselves, when we need any human interaction information or details, then only we use event or e */}
+
     </div>
 
 
       <div className="restaurant-list">
-        {restaurantList.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <RestaurantCard
               {...restaurant.info}
