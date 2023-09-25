@@ -22,9 +22,16 @@ const Body = () => {
       console.log(json);
       // optional chaining to prevent error
       setRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      // console.log(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
+      // Implement Shimmer UI 
     }
+    
+    // Conditional Rendering
+    // E.g.,
+    // if restaurant is empty -> shimmer UI 
+    // if restaurant has data -> actual data UI 
+
+
 
   return (
     <>
