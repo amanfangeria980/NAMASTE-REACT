@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react";
-import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
 function filterData(searchInput,restaurants){
@@ -11,7 +10,7 @@ function filterData(searchInput,restaurants){
 
 const Body = () => {
     const [searchInput,setSearchInput]=useState("");
-    const [restaurants, setRestaurants]=useState(restaurantList);
+    const [restaurants, setRestaurants]=useState([]);
 
     useEffect(()=>{
       getRestaurants();
