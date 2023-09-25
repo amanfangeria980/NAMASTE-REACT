@@ -14,8 +14,15 @@ const Body = () => {
     const [restaurants, setRestaurants]=useState(restaurantList);
 
     useEffect(()=>{
-      // we can do an API call here so that is is called as soon as the page loads
+      getRestaurants();
     },[])
+
+    async function getRestaurants(){
+      const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.19135&lng=86.2996368&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const json=await data.json();
+      console.log(json);
+      // we got the data and let's just use this data into restaurant.
+    }
 
   return (
     <>
