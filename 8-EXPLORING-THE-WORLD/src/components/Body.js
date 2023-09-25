@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from './Shimmer'
 
 function filterData(searchInput,restaurants){
   const data=restaurantList.filter((restaurant)=>restaurant.info.name.includes(searchInput));
@@ -30,13 +31,10 @@ const Body = () => {
     // E.g.,
     // if restaurant is empty -> shimmer UI 
     // if restaurant has data -> actual data UI 
+    // We have done it below using ternary operator 
 
-
-
-  return (
+  return (restaurants.length===0) ? <Shimmer/> : (
     <>
-
-
     <div className="search-container">
         <input type="text" className="search-input" placeholder="Search" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
 
