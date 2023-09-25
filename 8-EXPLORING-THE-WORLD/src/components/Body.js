@@ -10,6 +10,19 @@ function filterData(searchInput,restaurants){
 
 
 const Body = () => {
+  // we should not fetch or call an api here as, on every small change or key press, this component will keep on re-rendering.
+  /* 
+  We can do 2 things:
+  1.) Page loads->api call(200 ms)->render page(150 ms)=> 350ms
+  2.) Page loads->render something initially(100 ms) -> api call(200ms) -> update UI
+
+  Obviously, 2nd approach is the better one.
+
+  It means that we will first render something initially and then keep updating the UI.
+  
+  For this, react has given us a functionality -> useEffect() Hook
+
+  */
     const [searchInput,setSearchInput]=useState("");
     const [restaurants, setRestaurants]=useState(restaurantList);
   return (
@@ -42,11 +55,6 @@ const Body = () => {
 };
 
 export default Body;
-
-// Monolith Architecture vs Microservices Architecture
-// Microservices -> Instead of having one projects, we have multiple small small projects -> implements separation of concerns ->single single point of responsibility ->different tech stacks can be used to build one big application
-
-// In our case, we are building UI microservice for our app currently.
 
 
 
