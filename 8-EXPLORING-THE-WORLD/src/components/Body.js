@@ -42,3 +42,12 @@ const Body = () => {
 };
 
 export default Body;
+
+// Monolith Architecture vs Microservices Architecture
+// Microservices -> Instead of having one projects, we have multiple small small projects -> implements separation of concerns ->single single point of responsibility ->different tech stacks can be used to build one big application
+
+// In our case, we are building UI microservice for our app currently.
+
+
+
+
