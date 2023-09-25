@@ -14,10 +14,15 @@ const Body = () => {
     const [restaurants, setRestaurants]=useState(restaurantList);
 
     // Using useEffect
-    useEffect(()=>{
+    // -> it will be called after every re render if passed without the dependency array
 
-    })
-    // the callback func inside useEffect will not be called immediately, it will be called when useEffect wants it to be called and react will make sure, it will be called at a specific time.
+    useEffect(()=>{
+      console.log("call this when dependency is changed");
+    },[searchInput])
+
+    //1st parameter the callback func inside useEffect will not be called immediately, it will be called when useEffect wants it to be called and react will make sure, it will be called at a specific time. 
+    // 2nd parameter is dependency array, without this, it will run after every re-render, we don't want that that's why we pass this empty array.
+    // Suppose if we want to call useEffect when my searchInput changes, we can add searchInput into dependency array.
 
   return (
     <>
