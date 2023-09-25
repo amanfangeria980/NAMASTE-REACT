@@ -7,9 +7,12 @@ const Title = () => (
 );
 
 
+const title="Good Taste";
+
 const Header = () => (
   <div className="header">
-    <Title></Title>
+    <Title />
+    <h1>{title}</h1>
     <div className="nav-items">
       <ul>
         <li>Home</li>

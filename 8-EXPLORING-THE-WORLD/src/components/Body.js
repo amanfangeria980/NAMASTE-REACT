@@ -20,8 +20,6 @@ const Body = () => {
         <input type="text" className="search-input" placeholder="Search" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
 
         <button className="search-btn" onClick={()=>{
-          // need to filter the data
-          // update the state of the - restaurants variable
           const data=filterData(searchInput,restaurants);
           setRestaurants(data);
         }}>Search</button>
