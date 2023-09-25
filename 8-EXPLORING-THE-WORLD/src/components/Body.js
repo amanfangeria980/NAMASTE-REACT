@@ -18,6 +18,10 @@ const Body = () => {
     },[])
 
     // Without any dependency, it will be called only once and only after the initial render.
+    // or
+    // empty dependency array => once after render
+    // dep array [searchText] => once after initial render + everytime after re-render (when my searchText changes)
+
   return (
     <>
 
