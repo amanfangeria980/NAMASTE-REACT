@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
@@ -10,21 +10,15 @@ function filterData(searchInput,restaurants){
 
 
 const Body = () => {
-  // we should not fetch or call an api here as, on every small change or key press, this component will keep on re-rendering.
-  /* 
-  We can do 2 things:
-  1.) Page loads->api call(200 ms)->render page(150 ms)=> 350ms
-  2.) Page loads->render something initially(100 ms) -> api call(200ms) -> update UI
-
-  Obviously, 2nd approach is the better one.
-
-  It means that we will first render something initially and then keep updating the UI.
-  
-  For this, react has given us a functionality -> useEffect() Hook
-
-  */
     const [searchInput,setSearchInput]=useState("");
     const [restaurants, setRestaurants]=useState(restaurantList);
+
+    // Using useEffect
+    useEffect(()=>{
+
+    })
+    // the callback func inside useEffect will not be called immediately, it will be called when useEffect wants it to be called and react will make sure, it will be called at a specific time.
+
   return (
     <>
 
@@ -59,3 +53,4 @@ export default Body;
 
 
 
+// Components re renders after every state change and prop changes.
