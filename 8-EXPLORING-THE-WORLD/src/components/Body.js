@@ -18,11 +18,12 @@ const Body = () => {
     },[])
 
     async function getRestaurants(){
-      const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.19135&lng=86.2996368&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json=await data.json();
       console.log(json);
       // optional chaining to prevent error
-      setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      // console.log(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);
 
     }
 
@@ -56,8 +57,3 @@ const Body = () => {
 };
 
 export default Body;
-
-
-
-
-// Components re renders after every state change and prop changes.
