@@ -1,5 +1,12 @@
 logo_src = require("../../assets/logo.png");
 
+function loggedInUser(){
+  // Some method
+  // return true;
+  return false;
+}
+
+
 const Title = () => (
     <a href="/">
       <img className="logo" src={logo_src} alt="logo" />
@@ -21,6 +28,7 @@ const Header = () => (
         <li>Cart</li>
       </ul>
     </div>
+    { loggedInUser() ? <button>Logout</button>: <button>Login</button> }
   </div>
 );
 
