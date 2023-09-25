@@ -13,14 +13,11 @@ const Body = () => {
     const [searchInput,setSearchInput]=useState("");
     const [restaurants, setRestaurants]=useState(restaurantList);
 
-    // Using useEffect
-    // -> it will be called after every re render if passed without the dependency array
-
     useEffect(()=>{
       console.log("call me initially");
     },[])
 
-    // It will be called only once, since there is no dependency.
+    // Without any dependency, it will be called only once and only after the initial render.
   return (
     <>
 
