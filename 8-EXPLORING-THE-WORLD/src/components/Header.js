@@ -1,35 +1,33 @@
-logo_src = require("../../assets/logo.png");
+import { useState } from "react";
 
-function loggedInUser(){
-  // Some method
-  // return true;
-  return false;
-}
+logo_src = require("../../assets/logo.png");
 
 
 const Title = () => (
-    <a href="/">
-      <img className="logo" src={logo_src} alt="logo" />
-    </a>
+  <a href="/">
+    <img className="logo" src={logo_src} alt="logo" />
+  </a>
 );
 
+const title = "Good Taste";
 
-const title="Good Taste";
-
-const Header = () => (
-  <div className="header">
-    <Title />
-    <h1>{title}</h1>
-    <div className="nav-items">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
+const Header = () => {
+  const [isLoggedIn,setIsLoggedIn]=useState(false);
+  return (
+    <div className="header">
+      <Title />
+      <h1>{title}</h1>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+      {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}>Logout</button> : <button onClick={()=>setIsLoggedIn(true)}>Login</button>}
     </div>
-    { loggedInUser() ? <button>Logout</button>: <button>Login</button> }
-  </div>
-);
+  );
+};
 
 export default Header;
