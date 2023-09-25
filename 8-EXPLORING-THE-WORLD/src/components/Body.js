@@ -27,7 +27,7 @@ const Body = () => {
       getRestaurants();
     },[])
 
-    // to avoid rendering a component, we can do something like this: 
+    // to avoid rendering a component, we can do something like this:- early return
     // if(!allRestaurants)return null;
 
 
