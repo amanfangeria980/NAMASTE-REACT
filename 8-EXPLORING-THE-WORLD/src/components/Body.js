@@ -14,7 +14,7 @@ const Body = () => {
     const [restaurants, setRestaurants]=useState(restaurantList);
 
     useEffect(()=>{
-      console.log("call me initially");
+      // we can do an API call here so that is is called as soon as the page loads
     },[])
 
   return (
