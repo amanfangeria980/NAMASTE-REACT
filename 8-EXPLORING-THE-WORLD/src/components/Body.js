@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from './Shimmer'
 
 function filterData(searchInput,allRestaurants){
-  const data=allRestaurants.filter((restaurant)=>restaurant.info.name.includes(searchInput));
+  const data=allRestaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase().includes(searchInput.toLowerCase()));
   return data;
 }
 
@@ -30,7 +30,6 @@ const Body = () => {
     // to avoid rendering a component, we can do something like this:- early return
     // if(!allRestaurants)return null;
 
-
   return (allRestaurants.length===0) ? <Shimmer/> : (
     <>
     <div className="search-container">
@@ -45,7 +44,9 @@ const Body = () => {
 
 
       <div className="restaurant-list">
-        {filteredRestaurants.map((restaurant) => {
+      {/* if(filteredRestaurants.length===0)return <h1>"No Restaurants Found :("</h1>; */}
+        {
+        filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCard
               {...restaurant.info}
