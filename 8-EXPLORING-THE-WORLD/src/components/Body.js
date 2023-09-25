@@ -21,7 +21,9 @@ const Body = () => {
       const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=24.19135&lng=86.2996368&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json=await data.json();
       console.log(json);
-      // we got the data and let's just use this data into restaurant.
+      // optional chaining to prevent error
+      setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
     }
 
   return (
