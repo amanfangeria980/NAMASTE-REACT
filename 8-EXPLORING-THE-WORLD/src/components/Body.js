@@ -12,7 +12,7 @@ function filterData(searchInput,allRestaurants){
 const Body = () => {
     const [searchInput,setSearchInput]=useState("");
     const [allRestaurants,setAllRestaurants]=useState([]);
-    const [filteredrestaurants, setFilteredRestaurants]=useState([]);
+    const [filteredRestaurants, setFilteredRestaurants]=useState([]);
 
     async function getRestaurants(){
       const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -27,8 +27,11 @@ const Body = () => {
       getRestaurants();
     },[])
 
+    // to avoid rendering a component, we can do something like this: 
+    // if(!allRestaurants)return null;
 
-  return (filteredrestaurants.length===0) ? <Shimmer/> : (
+
+  return (allRestaurants.length===0) ? <Shimmer/> : (
     <>
     <div className="search-container">
         <input type="text" className="search-input" placeholder="Search" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
@@ -42,7 +45,7 @@ const Body = () => {
 
 
       <div className="restaurant-list">
-        {filteredrestaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCard
               {...restaurant.info}
