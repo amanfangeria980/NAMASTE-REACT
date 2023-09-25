@@ -54,9 +54,19 @@ const Body = () => {
             />
           );
         })}
+
+      {/* Under curly braces, we can write js expressions not statements:  */}
+      {
+        // let a=10 //cannot do this
+        console.log(4) //can do this
+        (a=10,console.log(a))//can do this
+      }
+      
       </div>
     </>
   );
 };
 
 export default Body;
+
+
