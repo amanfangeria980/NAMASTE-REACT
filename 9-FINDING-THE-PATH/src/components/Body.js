@@ -59,6 +59,8 @@ export default Body;
 
 
 
-// if we don't pass any dependency array in useEffect, it will execute after every re render.
+// never write a usestate inside if else statement or a for loop
+// never use usestate outside your components
+// we can use a lot of useEffects as per our usecase
 
 

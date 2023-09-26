@@ -1,11 +1,9 @@
 import { useState } from "react";
-
-logo_src = require("../../assets/logo.png");
-
+import Logo from '../assets/img/logo.png'
 
 const Title = () => (
   <a href="/">
-    <img className="logo" src={logo_src} alt="logo" />
+    <img className="logo" src={Logo} alt="logo" />
   </a>
 );
 
