@@ -12,7 +12,9 @@ import Cart from "./components/Cart"
 const AppLayout = () => (
   <>
     <Header />
-    <Body />
+    {/* <About/> if path is /about */}
+    {/* if path is / then body */}
+    <Body /> 
     <Footer />
   </>
 );
