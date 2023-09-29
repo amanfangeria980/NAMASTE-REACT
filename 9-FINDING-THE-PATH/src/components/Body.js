@@ -56,11 +56,3 @@ const Body = () => {
 };
 
 export default Body;
-
-
-
-// never write a usestate inside if else statement or a for loop
-// never use usestate outside your components
-// we can use a lot of useEffects as per our usecase
-
-
