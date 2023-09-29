@@ -13,7 +13,6 @@ const RestaurantMenu = () => {
     );
     const json = await data.json();
     // console.log(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards);
-    // example ids: 5933,344841,etc.
     setMenu(json.data);
   }
 
