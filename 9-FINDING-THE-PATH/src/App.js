@@ -17,7 +17,7 @@ const AppLayout = () => (
   </>
 );
 
-// Always write after the AppLayout to prevent any errors
+
 const appRouter=createBrowserRouter([
   {
     path: "/",
