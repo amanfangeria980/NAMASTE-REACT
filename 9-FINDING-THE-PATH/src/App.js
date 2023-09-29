@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import Footer from "./components/Footer"
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import About from "./components/About";
-
+import Error from "./components/Error"
 
 const AppLayout = () => (
   <>
@@ -20,6 +20,7 @@ const appRouter=createBrowserRouter([
   {
     path: "/",
     element: <AppLayout/>,
+    errorElement: <Error/>,
   },
   {
     path:"/about",
