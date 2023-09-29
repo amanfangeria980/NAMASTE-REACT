@@ -8,6 +8,9 @@ const Title = () => (
   </Link>
 );
 // We are building a SPA - single page application
+
+// 2 types of routing - client side and server side  => we are using client side routing here to make the pages render without reloading the whole page
+
 const title = "Good Taste";
 
 const Header = () => {
