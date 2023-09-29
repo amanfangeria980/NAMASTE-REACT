@@ -13,7 +13,7 @@ const AppLayout = () => (
   <>
     <Header />
     <Outlet/>
-    {/* All the childrens will go into the outlet according to the route */}
+    {/* All the childrens will go into the outlet according to the route */} 
     <Footer />
   </>
 );
