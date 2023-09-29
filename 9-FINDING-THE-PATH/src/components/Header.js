@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Logo from '../assets/img/logo.png'
+import { Link } from "react-router-dom";
 
 const Title = () => (
-  <a href="/">
+  <Link href="/">
     <img className="logo" src={Logo} alt="logo" />
-  </a>
+  </Link>
 );
-
+// We are building a SPA - single page application
 const title = "Good Taste";
 
 const Header = () => {
