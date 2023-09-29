@@ -25,7 +25,6 @@ const Body = () => {
     useEffect(()=>{
       getRestaurants();
     },[])
-
   return (allRestaurants.length===0) ? <Shimmer/> : (
     <>
     <div className="search-container">
