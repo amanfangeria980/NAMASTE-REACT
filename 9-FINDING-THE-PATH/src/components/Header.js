@@ -19,10 +19,10 @@ const Header = () => {
       <h1>{title}</h1>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
+          <Link to="/"><li>Home</li></Link>
           <Link to="/about"><li>About</li></Link>
-          <li>Contact</li>
-          <li>Cart</li>
+          <Link to="/contact"><li>Contact</li></Link>
+          <Link to="/cart"><li>Cart</li></Link>
         </ul>
       </div>
       {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}>Logout</button> : <button onClick={()=>setIsLoggedIn(true)}>Login</button>}

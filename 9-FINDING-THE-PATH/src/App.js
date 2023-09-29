@@ -6,6 +6,8 @@ import Footer from "./components/Footer"
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Error from "./components/Error"
+import Contact from "./components/Contact"
+import Cart from "./components/Cart"
 
 const AppLayout = () => (
   <>
@@ -25,7 +27,15 @@ const appRouter=createBrowserRouter([
   {
     path:"/about",
     element: <About/>
-  }
+  },
+  {
+    path: "/contact",
+    element: <Contact/>
+  },
+  {
+    path: "/cart",
+    element: <Cart/>
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
