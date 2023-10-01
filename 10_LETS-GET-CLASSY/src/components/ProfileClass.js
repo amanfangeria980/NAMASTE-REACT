@@ -1,10 +1,12 @@
 import React from 'react';
 
 class Profile extends React.Component{
-    // you cannot create a class-based component without render function
     render(){
         return(
-            <h1>Profile Class Component</h1>
+            <div>
+                <h1>Profile Class Component</h1>
+                <h2>Name: {this.props.name}</h2>
+            </div>
         )
     }
 
