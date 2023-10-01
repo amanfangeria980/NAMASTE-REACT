@@ -32,3 +32,24 @@ class Profile extends Component{
 }
 
 export default Profile;
+
+
+/* If there is two another child components inside ProfileClass render method, this will the lifecycle process for them, for eg,
+ProfileClass
+render(
+    <Profile1/>
+    <Profile2/>
+)
+
+* Parent - Constructor
+* Parent - Render
+*   First Child - Constructor
+*   First Child - Render
+*   Second Child - Constructor
+*   Second Child - Render
+*   First Child - componentDidMount 
+*   Second Child - componentDidMount 
+* Parent - componentDidMount 
+*
+
+*/
