@@ -44,13 +44,3 @@ class Profile extends Component{
 }
 
 export default Profile; 
-
-
-/* 
-New lifecycle :
-constructor
-render
-Component Did Mount
-render
-componentDidUpdate
-*/
