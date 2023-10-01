@@ -1,15 +1,23 @@
 import React from 'react';
 
+
+// first of all constructor is called, then, render is done and after that componentDidMount is called
+
 class Profile extends React.Component{
     constructor(props){
         super(props);
         this.state={
             count: 25,
         };
-        console.log("render")
+        console.log("constructor")
+    }
+
+    componentDidMount(){
+        console.log("Component Did Mount"); 
     }
 
     render(){
+        console.log("render");
         return(
             <div>
                 <h1>Profile Class Component</h1>
