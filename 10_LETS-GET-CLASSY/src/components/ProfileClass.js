@@ -28,6 +28,10 @@ class Profile extends Component{
         console.log("componentDidUpdate");
     }
 
+    componentWillUnmount(){
+        console.log("Component Unmounted");
+        // it will be called when our component will be unmounted for example if we move to some other page
+    }
     render(){
         console.log("render");
         return(
