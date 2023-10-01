@@ -13,7 +13,6 @@ class Profile extends Component{
     }
 
     componentDidMount(){
-        // this is what senior developer get paid for, as a maintainer, you have to act like ki remove this setInterval or cleanup the mess you have created only after that I will approve your PR
         this.timer = setInterval(() => {
             console.log("HELLO AMAN") 
         }, 1000);
@@ -45,3 +44,15 @@ class Profile extends Component{
 }
 
 export default Profile; 
+
+
+// While using useEffect, this is how we do cleanup
+/* 
+useEffect(() => {
+    // Code for the side effect
+  
+    return () => {
+      // Cleanup code
+    };
+  }, [dependency]);
+   */
