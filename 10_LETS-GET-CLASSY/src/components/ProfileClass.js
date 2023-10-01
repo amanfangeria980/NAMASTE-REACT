@@ -52,4 +52,5 @@ render(
 * Parent - componentDidMount 
 *
 
+Reference : Checkout React Lifecycle Diagram
 */
