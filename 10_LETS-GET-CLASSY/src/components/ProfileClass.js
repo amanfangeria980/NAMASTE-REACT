@@ -44,15 +44,3 @@ class Profile extends Component{
 }
 
 export default Profile; 
-
-
-// While using useEffect, this is how we do cleanup
-/* 
-useEffect(() => {
-    // Code for the side effect
-  
-    return () => {
-      // Cleanup code
-    };
-  }, [dependency]);
-   */
