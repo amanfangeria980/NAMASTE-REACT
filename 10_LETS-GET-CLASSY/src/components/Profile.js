@@ -1,8 +1,8 @@
-const Profile=()=>{
+const Profile=(props)=>{
     return(
         <div>
             <h1>Profile</h1>
-            <h2>Aman Fangeria</h2>
+            <h2>name: {props.name}</h2>
         </div>
     )
 }
