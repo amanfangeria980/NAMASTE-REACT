@@ -13,8 +13,8 @@ class Profile extends Component{
     }
 
     componentDidMount(){
-        // This setInverval will keep on printing this, even if I change my page or move to another page, that's why we have to do some cleanup after the Component is Unmounted
-        setInterval(() => {
+        // This setInverval will keep on printing this, even if I change my page or move to another page, that's why we have to do some cleanup after the Component is Unmounted - this is the answer to why we should unmount our component
+        this.timer = setInterval(() => {
             console.log("HELLO AMAN") 
         }, 1000);
         console.log("Component Did Mount"); 
@@ -25,6 +25,8 @@ class Profile extends Component{
     }
 
     componentWillUnmount(){
+        // Clearing our setInterval used above
+        clearInterval(this.timer);
         console.log("Component Unmounted");
 
     }
