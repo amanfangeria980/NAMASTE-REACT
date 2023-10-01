@@ -5,9 +5,8 @@ class Profile extends Component{
         super(props);
         this.state={
             userInfo:{
-                name: "Dummy",
-                image: "not found",
-                location: "Location"
+                name: "Dummy Name",
+                location: "Dummy Location",
             },
         };
         console.log("constructor")
@@ -31,7 +30,6 @@ class Profile extends Component{
                 <h1>Profile Class Component</h1>
                 <img src={this.state.userInfo?.avatar_url} alt="not found" />
                 <h2>Name: {this.state.userInfo?.name}</h2>
-
                 <h2>Location: {this.state.userInfo?.location}</h2>
 
             </div>
