@@ -23,6 +23,11 @@ class Profile extends Component{
         console.log("Component Did Mount"); 
     }
 
+
+    componentDidUpdate(){
+        console.log("componentDidUpdate");
+    }
+
     render(){
         console.log("render");
         return(
@@ -39,3 +44,13 @@ class Profile extends Component{
 }
 
 export default Profile; 
+
+
+/* 
+New lifecycle :
+constructor
+render
+Component Did Mount
+render
+componentDidUpdate
+*/
