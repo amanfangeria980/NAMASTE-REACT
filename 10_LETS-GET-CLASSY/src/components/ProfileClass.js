@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-// first of all constructor is called, then, render is done and after that componentDidMount is called
+// first of all constructor is called, then, render is done and after that componentDidMount is called.
+
 
 class Profile extends React.Component{
     constructor(props){
@@ -14,6 +15,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         console.log("Component Did Mount"); 
+        // Best place to make an API call. or useEffect alternative
     }
 
     render(){
