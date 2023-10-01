@@ -23,7 +23,7 @@ class Profile extends Component{
         console.log("Component Did Mount"); 
     }
 
-
+    // If we want to do something like only re render when count changes we can easily do that using useEffect by passing count in the dependency array but here we have to do something like below
     componentDidUpdate(){
         console.log("componentDidUpdate");
     }
