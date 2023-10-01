@@ -12,14 +12,7 @@ class Profile extends Component{
         console.log("constructor")
     }
 
-    async componentDidMount(){
-        // Let's make an API call
-        const data=await fetch("https://api.github.com/users/amanfangeria980");
-        const json=await data.json();
-        this.setState({
-            userInfo: json,
-        })
-        // console.log(json);
+    componentDidMount(){
         console.log("Component Did Mount"); 
     }
 
