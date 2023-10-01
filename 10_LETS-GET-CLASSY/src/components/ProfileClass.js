@@ -9,7 +9,11 @@ class Profile extends Component{
         console.log("constructor")
     }
 
-    componentDidMount(){
+    async componentDidMount(){
+        // Let's make an API call
+        const data=await fetch("https://api.github.com/users/amanfangeria980");
+        const json=await data.json();
+        console.log(json);
         console.log("Component Did Mount"); 
     }
 
@@ -32,25 +36,3 @@ class Profile extends Component{
 }
 
 export default Profile;
-
-
-/* If there is two another child components inside ProfileClass render method, this will the lifecycle process for them, for eg,
-ProfileClass
-render(
-    <Profile1/>
-    <Profile2/>
-)
-
-* Parent - Constructor
-* Parent - Render
-*   First Child - Constructor
-*   First Child - Render
-*   Second Child - Constructor
-*   Second Child - Render
-*   First Child - componentDidMount 
-*   Second Child - componentDidMount 
-* Parent - componentDidMount 
-*This above discrepancy is happening because, as we know render phase is faster as compared to commit phase, because in commit phase, we have to update the dom. So that's why to be fast, react first batches up all the rendering and then go to commit phase for multiple sibling components.
-
-Reference : Checkout React Lifecycle Diagram
-*/
