@@ -6,6 +6,7 @@ class Profile extends React.Component{
         this.state={
             count: 25,
         };
+        console.log("render")
     }
 
     render(){

@@ -1,6 +1,6 @@
 import { useState } from "react";
 const Profile=(props)=>{
-    const [count]=useState(22);
+    const [count]=useState(22); 
     return(
         <div>
             <h1>Profile</h1>
