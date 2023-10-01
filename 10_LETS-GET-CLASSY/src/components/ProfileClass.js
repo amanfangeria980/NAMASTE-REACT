@@ -47,3 +47,6 @@ class Profile extends Component{
 }
 
 export default Profile; 
+
+/* Suppose if we have two useEffect (s), one for when count1 changes and one for when count2 changes, to do this thing in class based component: 
+we do like we put two if conditions in componentDidUpdate for the two count variables */
