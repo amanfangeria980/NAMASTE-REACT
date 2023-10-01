@@ -24,7 +24,10 @@ class Profile extends Component{
     }
 
     // If we want to do something like only re render when count changes we can easily do that using useEffect by passing count in the dependency array but here we have to do something like below
-    componentDidUpdate(){
+    componentDidUpdate(prevProps,prevState){
+        if(this.state.count!== prevState.count){
+            console.log("Then do this");
+        }
         console.log("componentDidUpdate");
     }
 
