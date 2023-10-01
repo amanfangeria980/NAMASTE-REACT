@@ -29,11 +29,11 @@ const appRouter = createBrowserRouter([
         element: <Body/>,
       },
       {
-        path: "/about", //parentPath/{path} => localhost:1234/about
+        path: "/about",
         element: <About />,
         children:[
           {
-            path: "profile", //localhost:1234/about/profile or parentPath/{path}
+            path: "profile",
             element: <Profile/>
           },
         ]
