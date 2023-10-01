@@ -1,10 +1,6 @@
-import React from 'react';
+import {Component} from 'react';
 
-
-// first of all constructor is called, then, render is done and after that componentDidMount is called.
-
-
-class Profile extends React.Component{
+class Profile extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -15,7 +11,6 @@ class Profile extends React.Component{
 
     componentDidMount(){
         console.log("Component Did Mount"); 
-        // Best place to make an API call. or useEffect alternative
     }
 
     render(){
