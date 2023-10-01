@@ -50,7 +50,7 @@ render(
 *   First Child - componentDidMount 
 *   Second Child - componentDidMount 
 * Parent - componentDidMount 
-*
+*This above discrepancy is happening because, as we know render phase is faster as compared to commit phase, because in commit phase, we have to update the dom. So that's why to be fast, react first batches up all the rendering and then go to commit phase for multiple sibling components.
 
 Reference : Checkout React Lifecycle Diagram
 */
