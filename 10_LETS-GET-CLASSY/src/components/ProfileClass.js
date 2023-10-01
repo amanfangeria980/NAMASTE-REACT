@@ -36,3 +36,6 @@ class Profile extends Component{
 }
 
 export default Profile;
+
+
+// We cannot make useEffect async but we can make componentDidMount async
