@@ -2,13 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filterData(searchInput, allRestaurants) {
-  const data = allRestaurants.filter((restaurant) =>
-    restaurant?.info?.name?.toLowerCase().includes(searchInput.toLowerCase())
-  );
-  return data;
-}
+import { filterData } from "../utils/helper";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
