@@ -3,9 +3,8 @@
 import { useState,useEffect } from "react";
 
 const useRestaurant=(resId)=>{
-    // Create state variable
     const [restaurant,setRestaurant]=useState(null);
-    // We are using useEffect because everytime param changes, we have to re-render the whole component and display new data.
+
     useEffect(() => {
       getRestaurantInfo();
     }, []);
