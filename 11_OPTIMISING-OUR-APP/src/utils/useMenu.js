@@ -3,8 +3,8 @@
 import { useState,useEffect } from "react";
 import { FETCH_MENU_URL } from "../constants";
 
-const useRestaurant=(resId)=>{
-    const [restaurant,setRestaurant]=useState(null);
+const useMenu=(resId)=>{
+    const [menu,setMenu]=useState(null);
 
     useEffect(() => {
       getRestaurantInfo();
@@ -16,9 +16,9 @@ const useRestaurant=(resId)=>{
         );
         const json = await data.json();
         // console.log(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards);
-        setRestaurant(json.data);
+        setMenu(json.data);
       }
-    return restaurant;
+    return menu;
 };
 
-export default useRestaurant;
+export default useMenu;
