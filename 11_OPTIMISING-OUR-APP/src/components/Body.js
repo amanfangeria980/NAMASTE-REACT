@@ -27,6 +27,12 @@ const Body = () => {
     getRestaurants();
   }, []);
 
+  // we have to add a functionality or feature where we have to check if net is not working, we will display a message and restrict user from clicking any restaurants and all.
+  const offline=true
+  if(offline){
+    return <h1>🔴Offline - please check your internet connection :(</h1>
+  }
+
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
