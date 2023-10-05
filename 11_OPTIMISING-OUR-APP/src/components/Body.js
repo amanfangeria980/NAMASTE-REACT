@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -27,12 +28,12 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  // we have to add a functionality or feature where we have to check if net is not working, we will display a message and restrict user from clicking any restaurants and all. we will use the window- online event for this
-  const offline=true
-  if(offline){
+
+  const online=useOnline();
+  if(!online){
     return <h1>🔴Offline - please check your internet connection :(</h1>
   }
-
+  
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
