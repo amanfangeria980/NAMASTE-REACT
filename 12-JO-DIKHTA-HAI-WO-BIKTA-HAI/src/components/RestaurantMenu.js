@@ -11,23 +11,22 @@ const RestaurantMenu = () => {
   return !menu ? (
     <Shimmer />
   ) : (
-    <div className="menu">
+    <div className="flex justify-between">
       <div>
-        <h1>Restaurant id : {menu?.cards[0]?.card?.card?.info?.id} </h1>
-        <h2>{menu?.cards[0]?.card?.card?.info?.name}</h2>
-        <img
+        <h1 className="text-xl font-bold">Restaurant id : {menu?.cards[0]?.card?.card?.info?.id} </h1>
+        <h2 className="text-xl font-bold">{menu?.cards[0]?.card?.card?.info?.name}</h2>
+        <img className="w-96"
           src={
             IMG_CDN_URL + menu?.cards[0]?.card?.card?.info?.cloudinaryImageId
           }
           alt="restaurantImage"
         />
-        <h3>{menu?.cards[0]?.card?.card?.info?.areaName}</h3>
-        <h3>{menu?.cards[0]?.card?.card?.info?.city}</h3>
+        <h3 className="text-lg">{menu?.cards[0]?.card?.card?.info?.areaName+", "+menu?.cards[0]?.card?.card?.info?.city}</h3>
         <h3>{menu?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
       </div>
 
       <div>
-        <h1>Menu</h1>
+        <h1 className="font-bold text-2xl">Menu</h1>
         <ul>
           {menu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
             (item) => (
