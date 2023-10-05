@@ -10,6 +10,16 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
+
+// Chunking
+// Code Splitting
+// Dynamic Bundling
+// Lazy Loading
+// On demand loading
+// Dynamic Import
+
+
+
 const AppLayout = () => (
   <>
     <Header />
