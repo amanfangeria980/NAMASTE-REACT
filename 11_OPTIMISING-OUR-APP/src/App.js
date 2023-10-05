@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
-
+import Shimmer from "./components/Shimmer";
 
 // Chunking
 // Code Splitting
@@ -66,7 +66,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/instamart",
-        element: <Suspense><Instamart/></Suspense>
+        element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>
       },
     ],
   },
