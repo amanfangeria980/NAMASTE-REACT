@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
+import Instamart from "./components/Instamart"
 
 // Chunking
 // Code Splitting
@@ -59,6 +60,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu/>
+      },
+      {
+        path: "/instamart",
+        element: <Instamart/>
       },
     ],
   },
