@@ -1,33 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState} from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import useRestaurant from "../utils/useRestaurant";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState(null);
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
-
-  async function getRestaurants() {
-    const data = await fetch(
-      "https://www.jsonkeeper.com/b/UZP4"
-    );
-    const json = await data.json();
-    // console.log(json);
-    setAllRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  }
-
-  useEffect(() => {
-    getRestaurants();
-  }, []);
-
+  const allRestaurants=useRestaurant(setFilteredRestaurants);
+  
+  
 
   const online=useOnline();
   if(!online){
@@ -59,7 +43,7 @@ const Body = () => {
       </div>
 
       <div className="restaurant-list">
-        {filteredRestaurants.length === 0 ? (
+        {filteredRestaurants.length===0 ? (
           <h1>No Restaurants Found :(</h1>
         ) : (
           filteredRestaurants.map((restaurant) => {
