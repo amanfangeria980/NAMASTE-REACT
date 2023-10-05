@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
-import Instamart from "./components/Instamart"
+
 
 // Chunking
 // Code Splitting
@@ -20,6 +20,7 @@ import Instamart from "./components/Instamart"
 // Dynamic Import
 
 
+const Instamart=lazy(()=>import("./components/Instamart"));
 
 const AppLayout = () => (
   <>
