@@ -7,8 +7,8 @@ import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState(null);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(null);
 
   async function getRestaurants() {
     const data = await fetch(
@@ -34,7 +34,7 @@ const Body = () => {
     return <h1>🔴Offline - please check your internet connection :(</h1>
   }
   
-  return allRestaurants.length === 0 ? (
+  return !allRestaurants ? (
     <Shimmer />
   ) : (
     <>
