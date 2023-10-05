@@ -25,7 +25,7 @@ const Body = () => {
       <div className="p-5 bg-pink-50 my-5">
         <input
           type="text"
-          className="search-input"
+          className="focus:bg-green-50 p-2 m-2"
           placeholder="Search"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -42,7 +42,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly bg-slate-100">
         {filteredRestaurants.length===0 ? (
           <h1>No Restaurants Found :(</h1>
         ) : (
