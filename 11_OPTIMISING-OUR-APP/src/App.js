@@ -1,4 +1,4 @@
-import React,{lazy} from "react";
+import React,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -21,6 +21,8 @@ import Profile from "./components/Profile";
 
 
 const Instamart=lazy(()=>import("./components/Instamart"));
+// Upon on demand loading -> upon render -> suspend loading 
+
 
 const AppLayout = () => (
   <>
@@ -64,7 +66,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/instamart",
-        element: <Instamart/>
+        element: <Suspense><Instamart/></Suspense>
       },
     ],
   },
