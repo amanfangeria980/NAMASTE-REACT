@@ -19,7 +19,7 @@ import Profile from "./components/Profile";
 // On demand loading
 // Dynamic Import
 
-
+// This is a promise
 const Instamart=lazy(()=>import("./components/Instamart"));
 // Upon on demand loading -> upon render -> suspend loading 
 
