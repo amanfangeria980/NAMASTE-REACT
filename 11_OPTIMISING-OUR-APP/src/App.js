@@ -11,7 +11,7 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
-
+// Import lazy loading components here!
 // Chunking
 // Code Splitting
 // Dynamic Bundling
