@@ -1,9 +1,14 @@
-*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .header{
+
     display: flex;
     justify-content: space-between;
     margin: 10px;
@@ -53,4 +58,4 @@
 .menu img{
     height: 500px;
     width: 500px;
-}
+} */
