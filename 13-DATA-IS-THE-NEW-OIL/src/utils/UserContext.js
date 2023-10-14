@@ -7,5 +7,3 @@ const UserContext = createContext({
 });
 
 export default UserContext;
-
-// This is the default value, whereas Provider updates the context values as per the api call or any useEffect changes.
