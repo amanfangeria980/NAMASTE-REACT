@@ -12,5 +12,3 @@ const RestaurantCard = ({name,cloudinaryImageId,cuisines,avgRating,user}) => {
   };
 
   export default RestaurantCard;
-  
-  // This is what we call prop drilling
