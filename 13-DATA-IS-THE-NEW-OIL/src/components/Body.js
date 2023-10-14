@@ -7,10 +7,6 @@ import useOnline from "../utils/useOnline";
 import useRestaurant from "../utils/useRestaurant";
 
 const Body = () => {
-  const [user,setUser]=useState({
-    name: "Aman Fangeria",
-    email: "amanfangeria980@gmail.com",
-  });
   const [searchInput, setSearchInput] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
   const allRestaurants=useRestaurant(setFilteredRestaurants);
@@ -58,7 +54,7 @@ const Body = () => {
                 key={restaurant.info.id.toString()}
               >
                 <RestaurantCard
-                  {...restaurant.info} user={user}
+                  {...restaurant.info}
                   key={restaurant.info.id.toString()}
                 />
               </Link>
