@@ -23,6 +23,7 @@ const AppLayout = () =>{
   })
 
   return (
+    <>
     <UserContext.Provider value={{
       user: newUser,
     }}>
@@ -30,6 +31,7 @@ const AppLayout = () =>{
       <Outlet/>
       <Footer />
     </UserContext.Provider>
+    </>
   )
 }
 
