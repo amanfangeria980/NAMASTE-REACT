@@ -11,17 +11,25 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 const Instamart=lazy(()=>import("./components/Instamart"));
 
 
 const AppLayout = () =>{
+  const[newUser,setNewUser]=useState({
+    name: "Dummy Data",
+    email: "Dummy Email"
+  })
+
   return (
-    <>
+    <UserContext.Provider value={{
+      user: newUser,
+    }}>
       <Header />
       <Outlet/>
       <Footer />
-    </>
+    </UserContext.Provider>
   )
 }
 
