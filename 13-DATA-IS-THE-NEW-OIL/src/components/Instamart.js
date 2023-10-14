@@ -66,5 +66,3 @@ const Instamart = () => {
 };
 
 export default Instamart;
-
-/* In this we learned the concept of lifting the state up in react or what we call as passing data from child to parent component */
