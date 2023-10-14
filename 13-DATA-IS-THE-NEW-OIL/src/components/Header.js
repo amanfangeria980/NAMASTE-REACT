@@ -33,7 +33,8 @@ const Header = () => {
         </ul>
       </div>
       <h1 className="py-10">{isOnline ? "🟢" : "🔴" }</h1>
-      {user.name}
+      <h1 className="p-10 font-bold 
+      text-red-900">{user.name}</h1>
       {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}>Logout</button> : <button onClick={()=>setIsLoggedIn(true)}>Login</button>}
     </div>
   );
