@@ -25,3 +25,18 @@ export const {addItem,removeItem,clearCart}=cartSlice.actions;
 
 
 export default cartSlice.reducer;
+
+/* 
+
+we have to export in the above way because, it is internally working like this
+
+cartSlice={
+    actions: {
+        addItem,
+        removeItem,
+        clearCart
+    },
+    reducer: reducers
+}
+
+*/
