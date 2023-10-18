@@ -36,5 +36,8 @@ export default store;
             user: userSlice
         }
     }
-
+*Reading from the slice in our cart items(subscribing to our store)
+    - useSelector () imported from react-redux
+    -  const cartItems=useSelector(store=>store.cart.items)
+    
 */
