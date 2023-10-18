@@ -15,6 +15,8 @@ import UserContext from "./utils/UserContext";
 
 const Instamart=lazy(()=>import("./components/Instamart"));
 
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const AppLayout = () =>{
   const[newUser,setNewUser]=useState({
@@ -24,6 +26,7 @@ const AppLayout = () =>{
 
   return (
     <>
+    <Provider store={store}>
     <UserContext.Provider value={{
       user: newUser,
     }}>
@@ -31,6 +34,7 @@ const AppLayout = () =>{
       <Outlet/>
       <Footer />
     </UserContext.Provider>
+    </Provider>
     </>
   )
 }
