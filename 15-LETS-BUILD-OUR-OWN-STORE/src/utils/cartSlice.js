@@ -15,7 +15,7 @@ const cartSlice=createSlice({
             state.items = state.items.filter(item => item !== itemToRemove);
         },
         clearCart: (state)=>{
-            state=[];
+            state.items=[];
         },
     }
 });
