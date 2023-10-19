@@ -39,5 +39,19 @@ export default store;
 *Reading from the slice in our cart items(subscribing to our store)
     - useSelector () imported from react-redux
     -  const cartItems=useSelector(store=>store.cart.items)
+
+*Dispatching an Event
+In RestaurantMenu
+    (importing action from our slice)
+    -import { addItem } from "../utils/cartSlice"; 
+    (importing useDispatch method from react-redux to use dispatch)
+    -import { useDispatch } from "react-redux";
+    -const dipatch=useDispatch();
+    -On addItem button click, we create a function named handleAddItem
+    -Here's the body of the logic:
+        const handleAddItem=()=>{
+        [dispatch(action(payload))]
+        dispatch(addItem("Grapes"));  
+        }
     
 */

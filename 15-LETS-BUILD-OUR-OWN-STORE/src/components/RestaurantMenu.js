@@ -2,12 +2,22 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import Shimmer from "./Shimmer";
 import useMenu from "../utils/useMenu";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const menu=useMenu(resId);
-  console.log(menu)
+  // console.log(menu)
+
+  const dispatch=useDispatch(); 
+
+  const handleAddItem=()=>{
+    dispatch(addItem("Grapes"));  
+    // dispatch(action(payload)) 
+  }
+
   return !menu ? (
     <Shimmer />
   ) : (
@@ -23,6 +33,10 @@ const RestaurantMenu = () => {
         />
         <h3 className="text-lg">{menu?.cards[0]?.card?.card?.info?.areaName+", "+menu?.cards[0]?.card?.card?.info?.city}</h3>
         <h3>{menu?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
+      </div>
+
+      <div>
+        <button className="p-2 m-2 bg-green-100" onClick={()=>handleAddItem()}>Add Item</button>
       </div>
 
       <div>
