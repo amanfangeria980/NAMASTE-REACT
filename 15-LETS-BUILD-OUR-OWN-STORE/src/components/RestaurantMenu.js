@@ -13,15 +13,14 @@ const RestaurantMenu = () => {
 
   const dispatch=useDispatch(); 
 
-  const handleAddItem=()=>{
-    dispatch(addItem("Grapes"));  
-    // dispatch(action(payload)) 
+  const handleAddFoodItem=(item)=>{
+    dispatch(addItem(item));  
   }
 
   return !menu ? (
     <Shimmer />
   ) : (
-    <div className="flex justify-between">
+    <div className="flex m-5">
       <div>
         <h1 className="text-xl font-bold">Restaurant id : {menu?.cards[0]?.card?.card?.info?.id} </h1>
         <h2 className="text-xl font-bold">{menu?.cards[0]?.card?.card?.info?.name}</h2>
@@ -35,16 +34,13 @@ const RestaurantMenu = () => {
         <h3>{menu?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
       </div>
 
-      <div>
-        <button className="p-2 m-2 bg-green-100" onClick={()=>handleAddItem()}>Add Item</button>
-      </div>
 
-      <div>
+      <div className="m-5">
         <h1 className="font-bold text-2xl">Menu</h1>
         <ul>
           {menu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
             (item) => (
-              <li key={item?.card?.info?.id}>{item?.card?.info?.name}</li>
+              <li className="mb-1" key={item?.card?.info?.id}>{item?.card?.info?.name} - <button className="p-1 bg-green-100 rounded-md" onClick={()=>handleAddFoodItem(item?.card?.info)}>Add</button></li>
             )
           )}
         </ul>
